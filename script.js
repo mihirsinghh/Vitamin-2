@@ -56,10 +56,14 @@ const question3 = () => {
   const lastNameInput = document.getElementById("last-name"); //gets reference to <input> relating to user's last name input.
   const message = document.getElementById("message"); //gets reference to <p> element.
   
-  // using this function is reccomended but not necessary
+  // updates message to a greeting once user enters info - if user deletes first name, resets message.
   const updateMessage = () => {
     message.textContent = `Hello ${firstNameInput.value} ${lastNameInput.value}!`;
-  };
+
+    if (firstNameInput.value == '') {
+      message.textContent = 'Type your name to see a message!';
+    }
+  }
 
   firstNameInput.addEventListener("keyup", (event) => {
     updateMessage();
