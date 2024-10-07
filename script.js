@@ -2,8 +2,8 @@
  * Question 1
  */
 const question1 = () => {
-  const sidebarButton = __YOUR_CODE_HERE__;
-  const sidebar = __YOUR_CODE_HERE__;
+  const sidebarButton = document.getElementById('sidebar-button'); //returns reference to the first <button> element with ID "sidebar-button"
+  const sidebar = document.getElementById('sidebar'); //returns reference to the first <aside> element with ID "sidebar"
 
   // Listen for a "click" event on the sidebar's button.
   //
@@ -13,16 +13,19 @@ const question1 = () => {
   //
   // addEventListener will then call the function we provide
   // whenever the button is clicked.
+
   sidebarButton.addEventListener("click", (event) => {
-    const sidebarIsOpen = __YOUR_CODE_HERE__;
+    const sidebarIsOpen = sidebar.classList.contains('opened'); //checks to see if the element has class "opened" applied to it.
 
     if (sidebarIsOpen) {
       // Close the sidebar
-      /** YOUR CODE HERE */
+      sidebar.classList.remove('opened');
+      sidebarButton.innerText = '›';
       
     } else {
       // Open the sidebar
-      /** YOUR CODE HERE */
+     sidebar.classList.add('opened');
+     sidebarButton.innerText = '\u2039';
     }
   });
 };
@@ -31,9 +34,11 @@ const question1 = () => {
  * Question 2
  */
 const question2 = () => {
+  /*
   const taskName = __YOUR_CODE_HERE__;
   const addTodoButton = __YOUR_CODE_HERE__;
   const todoListUl = __YOUR_CODE_HERE__;
+  */
 
   /** YOUR CODE HERE */
 
@@ -43,9 +48,11 @@ const question2 = () => {
  * Question 3
  */
 const question3 = () => {
+  /*
   const firstNameInput = __YOUR_CODE_HERE__;
   const lastNameInput = __YOUR_CODE_HERE__;
   const message = __YOUR_CODE_HERE__;
+  */
 
   // using this function is reccomended but not necessary
   const updateMessage = () => {
@@ -62,7 +69,7 @@ const question3 = () => {
  * our JavaScript, otherwise it won't be able to operate on the HTML
  * since it hasn't loaded.
  */
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", (event) => { //calls the "event" callback function when the HTML page is fully loaded. Ensure that all Javascript code is inside this function or inside a function that is called by this callback function.
   // We wrap each question in a try-catch so that way even if
   // your code for one question errors, the other ones
   // will work.
