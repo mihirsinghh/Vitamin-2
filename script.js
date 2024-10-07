@@ -32,16 +32,19 @@ const question1 = () => {
 
 /**
  * Question 2
+ * When the user clicks the "to-do" button, create a new <li> element containing the text that the user entered, and append it to <ul id = to-do list>. After adding, clear <input id = task-name>.
  */
 const question2 = () => {
-  /*
-  const taskName = __YOUR_CODE_HERE__;
-  const addTodoButton = __YOUR_CODE_HERE__;
-  const todoListUl = __YOUR_CODE_HERE__;
-  */
+  const taskName = document.getElementById("task-name"); //gets reference to <input>
+  const addTodoButton = document.getElementById("add-todo"); //gets reference to <button>
+  const todoListUl = document.getElementById("todo-list"); //gets reference to <ul>
 
-  /** YOUR CODE HERE */
-
+  addTodoButton.addEventListener("click", (event) => {
+    const newListElement = document.createElement("li");
+    newListElement.innerText = taskName.value; //sets the entry of the list element to be whatever the user typed into the input field.
+    todoListUl.append(newListElement); //appends the list item to the <ul> element.
+    taskName.value = "";//clears the input field.
+  })
 };
 
 /**
