@@ -51,20 +51,23 @@ const question2 = () => {
  * Question 3
  */
 const question3 = () => {
-  /*
-  const firstNameInput = __YOUR_CODE_HERE__;
-  const lastNameInput = __YOUR_CODE_HERE__;
-  const message = __YOUR_CODE_HERE__;
-  */
-
+  
+  const firstNameInput = document.getElementById("first-name"); //gets reference to <input> relating to user's first name input.
+  const lastNameInput = document.getElementById("last-name"); //gets reference to <input> relating to user's last name input.
+  const message = document.getElementById("message"); //gets reference to <p> element.
+  
   // using this function is reccomended but not necessary
   const updateMessage = () => {
-    /** YOUR CODE HERE */
-
+    message.textContent = `Hello ${firstNameInput.value} ${lastNameInput.value}!`;
   };
 
-  /** YOUR CODE HERE */
+  firstNameInput.addEventListener("keyup", (event) => {
+    updateMessage();
+  });
 
+  lastNameInput.addEventListener("keyup", (event) => {
+    updateMessage();
+  });
 };
 
 /**
